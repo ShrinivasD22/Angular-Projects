@@ -1,9 +1,13 @@
-<div class="d-flex justify-content-center pt-5">
+<app-mainnavbar></app-mainnavbar>
+
+<router-outlet></router-outlet>
+
+<div class="d-flex justify-content-center pt-5 mt-4">
   <div class="row container d-flex justify-content-center">
     <div class="col-md-12">
       <div class="card px-3">
         <div class="card-body">
-          <h4 class="card-title">Todo list</h4>
+          <h4 class="card-title" >Task List :</h4>
           <div class="list-container">
             <ul>
               <li *ngFor="let task of tasks" [class.completed]="task.completed">
@@ -12,7 +16,7 @@
                       (change)="markCompleted(task.id, $event)"> </div>
                   <div class="title" [routerLink]="['/detail-task', task.id]">
                     {{task.title}}
-                    <p style="font-style: italic;">Due Date -  {{task.dueDate}} </p>  
+                    <p style="font-style: italic;">Due Date -  {{task.dueDate}} </p>
                   </div>
                   <div class="ml-auto">
                     <button [routerLink]="['/edit-task', task.id]" class="mr-1 b-none text-primary"><fa-icon
@@ -29,3 +33,5 @@
     </div>
   </div>
 </div>
+
+

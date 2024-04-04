@@ -42,11 +42,11 @@ export class TaskService {
 
   // add task into the local storage with id
   addTask(task: Task): void {
-   
+
     this.tasks.push(task);
     this.saveTasks(this.tasks);
   }
-  
+
   // update the exiting task
   updateTask(updatedTask: Task): void {
     const task = this.tasks.find(task => task.id === updatedTask.id);
@@ -77,4 +77,16 @@ export class TaskService {
   showSuccess(message: any, title: any) {
     this.toastr.success(message, title)
   }
+
+  searchTasksByTitle(title: string): any[] {
+    const tasksString = localStorage.getItem('tasks');
+    if (tasksString) {
+      const tasks = JSON.parse(tasksString);
+      return tasks.filter((task: { title: string }) => task.title.toLowerCase().includes(title.toLowerCase()));
+    } else {
+      return [];
+    }
+  }
+
+
 }

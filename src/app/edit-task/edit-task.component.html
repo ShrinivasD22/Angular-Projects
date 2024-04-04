@@ -27,8 +27,8 @@
                                 <label for="dueDate">Due Date</label>
                                 <input type="date"  #dueDate="ngModel"  class="form-control mb-3" id="dueDate" [(ngModel)]="task.dueDate" name="dueDate"
                                 required>
-              
-                  
+
+
                                   <span class="text-danger opacity"
                                     *ngIf="(dueDate.touched || editForm.submitted) && dueDate.errors?.['required']">
                                     Due Date is required
