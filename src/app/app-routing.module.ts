@@ -9,6 +9,7 @@ import { MainnavbarComponent } from './mainnavbar/mainnavbar.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { SearchComponent } from './search/search.component';
+import { StartingPageComponent } from './starting-page/starting-page.component';
 const routes: Routes = [
   {
     path: 'create-task', component: CreateTaskComponent
@@ -36,10 +37,17 @@ const routes: Routes = [
   {
     path:'search',component:SearchComponent
   },
+  {
+    path:'starting-page',component:StartingPageComponent
+  },
 
   {
     path:'',redirectTo:'register', pathMatch:"full"
   },
+
+  // {
+  //   path:'',redirectTo:'starting-page', pathMatch:"full"
+  // },
 
 
 ];

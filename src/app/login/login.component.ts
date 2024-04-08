@@ -32,7 +32,7 @@ export class LoginComponent {
     // Check if entered credentials match stored credentials
     if (this.email === storedEmail && this.password === storedPassword) {
       alert('Login Successful!');
-      this.router.navigate(['mainnavbar']); // Change 'mainnav' to the appropriate route
+      this.router.navigate(['starting-page']); // Change 'mainnav' to the appropriate route
     } else {
       alert('Wrong credentials. Please try again.');
     }
